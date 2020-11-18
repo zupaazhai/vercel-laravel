@@ -20,6 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('health-check', function () {
     return [
-        'version' => 1
+        'version' => 1.3
     ];
 });
