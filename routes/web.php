@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Faker;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,22 @@ Route::get('health-check', function () {
     return [
         'version' => 1.3
     ];
+});
+
+Route::get('/users', function () {
+
+    $result = [];
+
+    foreach (range(0, 100) as $user) {
+        $faker = Faker\Factory::create();
+        $result[] = [
+            'name' => $faker->name,
+            'email' => $faker->email,
+            'phone' => $faker->phoneNumber,
+            'city' => $faker->city
+        ];
+    }
+
+    return $result;
+
 });
