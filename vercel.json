@@ -21,6 +21,8 @@
 
         "CACHE_DRIVER": "file",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+
+        "STORAGE_PATH": "/tmp"
     }
 }
