@@ -28,23 +28,17 @@ Route::get('/users', function () {
 
     $result = [];
 
-    $faker =  Faker::create();
+    foreach (range(0, 200) as $user) {
+        $faker =  Faker::create();
 
-    dd($faker);
+        $result[] = [
+            'name' => $faker->name,
+            'email' => $faker->email,
+            'phone' => $faker->phoneNumber,
+            'city' => $faker->city
+        ];
+    }
 
-    // foreach (range(0, 100) as $user) {
-
-    //     $faker = app()->make('Faker\Factory');
-    //     $faker = $faker->create();
-
-    //     $result[] = [
-    //         'name' => $faker->name,
-    //         'email' => $faker->email,
-    //         'phone' => $faker->phoneNumber,
-    //         'city' => $faker->city
-    //     ];
-    // }
-
-    // return $result;
+    return $result;
 
 });
