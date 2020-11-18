@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Faker;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,19 +28,21 @@ Route::get('/users', function () {
 
     $result = [];
 
-    foreach (range(0, 100) as $user) {
+    dd(PHP_VERSION);
 
-        $faker = app()->make('Faker\Factory');
-        $faker = $faker->create();
+    // foreach (range(0, 100) as $user) {
 
-        $result[] = [
-            'name' => $faker->name,
-            'email' => $faker->email,
-            'phone' => $faker->phoneNumber,
-            'city' => $faker->city
-        ];
-    }
+    //     $faker = app()->make('Faker\Factory');
+    //     $faker = $faker->create();
 
-    return $result;
+    //     $result[] = [
+    //         'name' => $faker->name,
+    //         'email' => $faker->email,
+    //         'phone' => $faker->phoneNumber,
+    //         'city' => $faker->city
+    //     ];
+    // }
+
+    // return $result;
 
 });
