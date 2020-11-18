@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Faker\Factory as Faker;
+use Illuminate\Support\Facades\Cache;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,9 @@ Route::get('/users', function () {
 
     $result = [];
 
+    Cache::increment('visitor', 1);
+    $visitor = Cache::get('visitor');
+
     foreach (range(0, 200) as $user) {
         $faker =  Faker::create();
 
@@ -39,6 +43,9 @@ Route::get('/users', function () {
         ];
     }
 
-    return $result;
+    return [
+        'request' => $visitor,
+        'data' => $result
+    ];
 
 });
