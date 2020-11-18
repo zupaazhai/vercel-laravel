@@ -54,3 +54,10 @@ require __DIR__ . '/../public/index.php';
 ```
 /vendor
 ```
+
+## Install Vercel
+```
+npm i -g vercel
+```
+
+## Add APP_KEY to Setting
