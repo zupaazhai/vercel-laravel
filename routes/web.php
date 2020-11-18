@@ -19,6 +19,6 @@ Route::get('/', function () {
 
 Route::get('health-check', function () {
     return [
-        'version' => 1.2
+        'version' => 1.3
     ];
 });
